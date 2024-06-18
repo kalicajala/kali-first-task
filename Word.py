@@ -45,7 +45,6 @@ class Word:
         num = self.consonant_chunks(self)
         translated_word = ""
         if self.capitalized:
-            self.word = self.word[:1].lower() + self.word[1:]
             temp = self.word[num:]
             translated_word = temp[:1].upper() + temp[1:] + self.word[:num] + "ay"
             return translated_word
@@ -54,6 +53,10 @@ class Word:
     
     # translates the words starting with vowel(s)
     def vowel_translate(self):
+        translated_word = ""
+        if self.capitalized:
+            translated_word = self.word[:1].upper() + self.word[1:] + "yay"
+            return translated_word
         translated_word = self.word + "yay"
         return translated_word
     
