@@ -9,17 +9,20 @@ class Word:
     # overall translate method
     def translate_word(self):
         if self.numbers_and_special_characters():
-            return self.word
+            # return self.word
+            print(self.word)
         if self.isCapitalized():
-            self.word = self.word[:1].tolower() + self.word[1:]
+            self.word = self.word[:1].lower() + self.word[1:]
             self.capitalized = True
-        if self.vowel_or_consonant(self.word) is True:
-             return self.vowel_translate()
+        if (self.vowel_or_consonant(self.word)):
+            # return self.vowel_translate()
+            print (self.vowel_translate())
         else:
-            return self.consonant_translate()
+            # return self.consonant_translate()
+            print(self.consonant_translate())
             
     # determines if the word starts with a vowel or a consonant
-    def vowel_or_consonant(w):
+    def vowel_or_consonant(self, w):
         vowels = ["a", "e", "i", "o", "u"]
         firstLetter = w[:1]
         print(firstLetter)
@@ -32,9 +35,11 @@ class Word:
     def consonant_chunks(self):
         num = 1
         temp = self.word[num:]
-        while (True):
+        b = True
+        while (b):
             # FINISH THIS IF STATEMENT
             if self.vowel_or_consonant(temp) is True:
+                b = False
                 break
             num += 1
             temp = self.word[num:]
@@ -42,22 +47,30 @@ class Word:
     
     # translates the words starting with consonant(s)
     def consonant_translate(self):
-        num = self.consonant_chunks(self)
+        num = self.consonant_chunks()
         translated_word = ""
+        punctuation = ""
+        if self.punctuation_check() is True:
+            punctuation = self.word[-1]
+            self.word = self.word[:-1]
         if self.capitalized:
             temp = self.word[num:]
-            translated_word = temp[:1].upper() + temp[1:] + self.word[:num] + "ay"
+            translated_word = temp[:1].upper() + temp[1:] + self.word[:num] + "ay" + punctuation
             return translated_word
-        translated_word = self.word[num:] + self.word[:num] + "ay"
+        translated_word = self.word[num:] + self.word[:num] + "ay" + punctuation
         return translated_word
     
     # translates the words starting with vowel(s)
     def vowel_translate(self):
         translated_word = ""
+        punctuation = ""
+        if self.punctuation_check() is True:
+            punctuation = self.word[-1]
+            self.word = self.word[:-1]
         if self.capitalized:
-            translated_word = self.word[:1].upper() + self.word[1:] + "yay"
+            translated_word = self.word[:1].upper() + self.word[1:] + "yay" + punctuation
             return translated_word
-        translated_word = self.word + "yay"
+        translated_word = self.word + "yay" + punctuation
         return translated_word
     
     # checks for punctuation
@@ -77,13 +90,9 @@ class Word:
                    "_", "+", "=", "/", "<", ">", "~", "[", "]", "{", "}"]
         
         for w in self.word:
-            for n in numbers:
-                if w == n:
-                    return True
-                
-            for s in s_chars:
-                if w == s:
-                    return True
+            if w in numbers or w in s_chars:
+                print("this is being ran")
+                return True
         return False
                 
         
@@ -93,3 +102,11 @@ class Word:
         if firstLetter.isupper():
             return True
         return False
+    
+def main():
+    test = input("enter a word: ")
+    w = Word(test)
+    w.translate_word()
+
+if __name__ == "__main__":
+    main()
