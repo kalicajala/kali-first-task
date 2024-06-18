@@ -8,7 +8,7 @@ class Word:
     
     # overall translate method
     def translate_word(self):
-        if self.numbers_and_special_characters():
+        if (self.numbers_and_special_characters()):
             # return self.word
             print(self.word)
         if self.isCapitalized():
@@ -107,6 +107,7 @@ def main():
     test = input("enter a word: ")
     w = Word(test)
     w.translate_word()
+    # print(w.numbers_and_special_characters())
 
 if __name__ == "__main__":
     main()
