@@ -9,17 +9,17 @@ class Word:
     # overall translate method
     def translate_word(self):
         if (self.numbers_and_special_characters()):
-            # return self.word
-            print(self.word)
+            return self.word
+            # print(self.word)
         if self.isCapitalized():
             self.word = self.word[:1].lower() + self.word[1:]
             self.capitalized = True
         if (self.vowel_or_consonant(self.word)):
-            # return self.vowel_translate()
-            print (self.vowel_translate())
+            return self.vowel_translate()
+            # print (self.vowel_translate())
         else:
-            # return self.consonant_translate()
-            print(self.consonant_translate())
+            return self.consonant_translate()
+            # print(self.consonant_translate())
             
     # determines if the word starts with a vowel or a consonant
     def vowel_or_consonant(self, w):
@@ -91,7 +91,7 @@ class Word:
         
         for w in self.word:
             if w in numbers or w in s_chars:
-                print("this is being ran")
+                # print("this is being ran")
                 return True
         return False
                 
