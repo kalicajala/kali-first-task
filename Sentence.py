@@ -1,5 +1,5 @@
 # import Word class
-import Word
+from Word import Word
 
 # make a sentence class to translate the user input
 class Sentence:
@@ -13,8 +13,9 @@ class Sentence:
         total_translation = ""
         words_list = self.sentence.split()
         for w in words_list:
-            temp = Word.Word(w)
+            temp = Word(w)
             total_translation += temp.translate_word()
+            total_translation += " "
         return total_translation
 
 # def main():
@@ -26,6 +27,7 @@ class Sentence:
 # if __name__ == "__main__":
 #     main()
 
-test = input("enter a word: ")
-s = Sentence(test)
-s.translate_sentence()
+# test = input("enter a sentence: ")
+# s = Sentence(test)
+# sentence = s.translate_sentence()
+# print(sentence)
