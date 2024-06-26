@@ -8,6 +8,8 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
+from Sentence import Sentence
+
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
@@ -98,11 +100,30 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.textbox.textChanged.connect(self.unchanged_text.hide)
-        self.button.pressed.connect(self.unchanged_text.show)
-        self.textbox.textChanged.connect(self.unchanged_text.update)
+        self.textbox.textChanged.connect(self.set_invisible)
+        self.button.pressed.connect(self.set_visible)
+        self.button.pressed.connect(self.translate)
 
         QMetaObject.connectSlotsByName(MainWindow)
+
+    def set_visible(self):
+        # print("set visible is running")
+        # when the button is pushed, the text will become visible
+        self.unchanged_text.setEchoMode(QLineEdit.EchoMode.Normal)
+    
+    def set_invisible(self):
+        # print("set invisible is running")
+        # when the text is changed by the user, the translation becomes invisible again
+        self.unchanged_text.setEchoMode(QLineEdit.EchoMode.NoEcho)
+
+    def translate(self):
+        # print("translate is running")
+        text_to_translate = self.textbox.text()
+        sentence = Sentence(text_to_translate)
+        translated_sentence = sentence.translate_sentence()
+        self.unchanged_text.setText(translated_sentence)
+
+
     # setupUi
 
     def retranslateUi(self, MainWindow):
