@@ -107,21 +107,20 @@ class Ui_MainWindow(object):
         QMetaObject.connectSlotsByName(MainWindow)
 
     def set_visible(self):
-        # print("set visible is running")
         # when the button is pushed, the text will become visible
         self.unchanged_text.setEchoMode(QLineEdit.EchoMode.Normal)
     
     def set_invisible(self):
-        # print("set invisible is running")
         # when the text is changed by the user, the translation becomes invisible again
         self.unchanged_text.setEchoMode(QLineEdit.EchoMode.NoEcho)
 
     def translate(self):
-        # print("translate is running")
+        # when the button is pushed, the text in the left textbox will be translated and be set as the text in the right textbox
         text_to_translate = self.textbox.text()
         sentence = Sentence(text_to_translate)
         translated_sentence = sentence.translate_sentence()
         self.unchanged_text.setText(translated_sentence)
+
 
 
     # setupUi
@@ -130,9 +129,9 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Pig Latin Translator", None))
         self.textbox.setText("")
-        self.textbox.setPlaceholderText(QCoreApplication.translate("MainWindow", u"type something", None))
+        self.textbox.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type something to be translated!", None))
         self.unchanged_text.setText("")
-        self.unchanged_text.setPlaceholderText(QCoreApplication.translate("MainWindow", u"this text will be read only", None))
+        self.unchanged_text.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Your translation will appear here!", None))
         self.button.setText(QCoreApplication.translate("MainWindow", u"Translate", None))
     # retranslateUi
 
