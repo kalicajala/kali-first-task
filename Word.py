@@ -8,6 +8,7 @@ class Word:
     
     # overall translate method
     def translate_word(self):
+        # print("translate word method was ran")
         if (self.numbers_and_special_characters()):
             return self.word
             # print(self.word)
@@ -25,7 +26,7 @@ class Word:
     def vowel_or_consonant(self, w):
         vowels = ["a", "e", "i", "o", "u"]
         firstLetter = w[:1]
-        print(firstLetter)
+        # print(firstLetter)
         for v in vowels:
             if firstLetter == v:
                 return True # returns true if the letter is a vowel
@@ -39,6 +40,9 @@ class Word:
         while (b):
             # FINISH THIS IF STATEMENT
             if self.vowel_or_consonant(temp) is True:
+                b = False
+                break
+            elif temp[:1] == "y":
                 b = False
                 break
             num += 1
@@ -103,11 +107,11 @@ class Word:
             return True
         return False
     
-def main():
-    test = input("enter a word: ")
-    w = Word(test)
-    w.translate_word()
-    # print(w.numbers_and_special_characters())
+# def main():
+#     test = input("enter a word: ")
+#     w = Word(test)
+#     w.translate_word()
+#     # print(w.numbers_and_special_characters())
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
