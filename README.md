@@ -1,6 +1,6 @@
-This repository holds the files that make up my Main window application.
-
-This is a Pig Latin translator that takes the user input (English), and translates it's equivalent in Pig Latin.
+# pig-latin-translator
+## Description
+This repository holds the files that make up my Pig Latin Translator, which takes the user input (English), and translates it's equivalent in Pig Latin.
 
 It accounts for the following:
 
@@ -10,8 +10,6 @@ It accounts for the following:
 - Special Characters
 - Numbers
 
-
-# pig-latin-translator
 ## Requirements
 - Visual Studio Code
 - Python 3.12
