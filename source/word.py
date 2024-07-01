@@ -76,9 +76,7 @@ class Word:
         # accounts for punctuation and moves it (if any) to the back of the word
         if num >= 1:
             punctuation = self.word[-(num):]
-            print(punctuation)
             self.word = self.word[:-(num)]
-            print(self.word)
         # capitalizes the first letter of the stranslated word because the word was originally capitalized
         if self.capitalized:
             translated_word = self.word[:1].upper() + self.word[1:] + "yay" + punctuation
