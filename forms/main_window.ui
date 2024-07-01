@@ -17,7 +17,7 @@
    <string notr="true">background-color: rgb(255, 170, 255)</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextEdit" name="textbox">
+   <widget class="QTextEdit" name="textEdit_source_english_input">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -38,7 +38,7 @@
      <string>Enter text to be translated</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="unchanged_text">
+   <widget class="QTextEdit" name="textEdit_output">
     <property name="geometry">
      <rect>
       <x>450</x>
@@ -62,7 +62,7 @@
      <string>Your translation will be displayed here</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="label_title">
     <property name="geometry">
      <rect>
       <x>280</x>
@@ -83,7 +83,7 @@
      <string>Pig Latin Translator</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="button">
+   <widget class="QPushButton" name="pushButton_translate">
     <property name="geometry">
      <rect>
       <x>330</x>
@@ -122,7 +122,7 @@ QPushButton::pressed {
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="sadPigButton">
+   <widget class="QLabel" name="sadPig">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -134,38 +134,30 @@ QPushButton::pressed {
     <property name="text">
      <string/>
     </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>sad.jpg</normaloff>sad.jpg</iconset>
+    <property name="pixmap">
+     <pixmap>../sad.jpg</pixmap>
     </property>
-    <property name="iconSize">
-     <size>
-      <width>140</width>
-      <height>140</height>
-     </size>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="happyPigButton">
+   <widget class="QLabel" name="happyPig">
     <property name="geometry">
      <rect>
       <x>580</x>
       <y>470</y>
-      <width>91</width>
+      <width>100</width>
       <height>100</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>download.jpg</normaloff>download.jpg</iconset>
+    <property name="pixmap">
+     <pixmap>../download.jpg</pixmap>
     </property>
-    <property name="iconSize">
-     <size>
-      <width>100</width>
-      <height>100</height>
-     </size>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -174,9 +166,9 @@ QPushButton::pressed {
  <resources/>
  <connections>
   <connection>
-   <sender>textbox</sender>
+   <sender>textEdit_source_english_input</sender>
    <signal>textChanged()</signal>
-   <receiver>unchanged_text</receiver>
+   <receiver>textEdit_output</receiver>
    <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -190,9 +182,9 @@ QPushButton::pressed {
    </hints>
   </connection>
   <connection>
-   <sender>button</sender>
+   <sender>pushButton_translate</sender>
    <signal>pressed()</signal>
-   <receiver>unchanged_text</receiver>
+   <receiver>textEdit_output</receiver>
    <slot>show()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -206,9 +198,9 @@ QPushButton::pressed {
    </hints>
   </connection>
   <connection>
-   <sender>button</sender>
+   <sender>pushButton_translate</sender>
    <signal>pressed()</signal>
-   <receiver>unchanged_text</receiver>
+   <receiver>textEdit_output</receiver>
    <slot>update()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -222,66 +214,34 @@ QPushButton::pressed {
    </hints>
   </connection>
   <connection>
-   <sender>textbox</sender>
+   <sender>textEdit_source_english_input</sender>
    <signal>textChanged()</signal>
-   <receiver>sadPigButton</receiver>
+   <receiver>sadPig</receiver>
    <slot>show()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>164</x>
+     <x>168</x>
      <y>428</y>
     </hint>
     <hint type="destinationlabel">
-     <x>149</x>
-     <y>496</y>
+     <x>167</x>
+     <y>506</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>button</sender>
+   <sender>pushButton_translate</sender>
    <signal>pressed()</signal>
-   <receiver>sadPigButton</receiver>
+   <receiver>sadPig</receiver>
    <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>372</x>
-     <y>482</y>
+     <x>361</x>
+     <y>497</y>
     </hint>
     <hint type="destinationlabel">
-     <x>232</x>
-     <y>526</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>textbox</sender>
-   <signal>textChanged()</signal>
-   <receiver>happyPigButton</receiver>
-   <slot>hide()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>315</x>
-     <y>408</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>615</x>
-     <y>547</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>button</sender>
-   <signal>pressed()</signal>
-   <receiver>happyPigButton</receiver>
-   <slot>show()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>406</x>
-     <y>507</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>588</x>
-     <y>523</y>
+     <x>222</x>
+     <y>530</y>
     </hint>
    </hints>
   </connection>
