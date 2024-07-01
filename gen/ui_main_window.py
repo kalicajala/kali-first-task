@@ -91,13 +91,6 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.textEdit_source_english_input.textChanged.connect(self.textEdit_output.hide)
-        self.pushButton_translate.pressed.connect(self.textEdit_output.show)
-        self.pushButton_translate.pressed.connect(self.textEdit_output.update)
-        self.textEdit_source_english_input.textChanged.connect(self.sadPig.show)
-        self.textEdit_source_english_input.textChanged.connect(self.happyPig.hide)
-        self.pushButton_translate.pressed.connect(self.sadPig.hide)
-        self.pushButton_translate.pressed.connect(self.happyPig.show)
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
@@ -112,22 +105,3 @@ class Ui_MainWindow(object):
         self.happyPig.setText("")
     # retranslateUi
 
-# this allows the application to run and open the Main Window
-import sys
-from PySide6.QtWidgets import QApplication, QMainWindow
-from PySide6.QtCore import QFile
-from ui_main_window import Ui_MainWindow
-
-class MainWindow(QMainWindow):
-    def __init__(self):
-        super(MainWindow, self).__init__()
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-
-    window = MainWindow()
-    window.show()
-
-    sys.exit(app.exec())
