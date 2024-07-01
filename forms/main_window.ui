@@ -135,7 +135,7 @@ QPushButton::pressed {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../sad.jpg</pixmap>
+     <pixmap>../assets/peppaPigSad.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -154,7 +154,7 @@ QPushButton::pressed {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../download.jpg</pixmap>
+     <pixmap>../assets/peppaPigHappy.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
