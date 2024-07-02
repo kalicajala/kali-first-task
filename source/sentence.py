@@ -1,5 +1,5 @@
 # import Word class
-from word import Word
+from source.word import Word
 
 # make a sentence class to translate the user input
 class Sentence:
