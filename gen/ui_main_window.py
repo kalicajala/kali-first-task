@@ -80,11 +80,13 @@ class Ui_MainWindow(object):
         self.sadPig.setGeometry(QRect(100, 480, 141, 81))
         self.sadPig.setPixmap(QPixmap(u"../assets/peppaPigSad.jpg"))
         self.sadPig.setScaledContents(True)
+        self.sadPig.setTextInteractionFlags(Qt.LinksAccessibleByMouse)
         self.happyPig = QLabel(self.centralwidget)
         self.happyPig.setObjectName(u"happyPig")
         self.happyPig.setGeometry(QRect(580, 470, 100, 100))
         self.happyPig.setPixmap(QPixmap(u"../assets/peppaPigHappy.jpg"))
         self.happyPig.setScaledContents(True)
+        self.happyPig.setTextInteractionFlags(Qt.LinksAccessibleByMouse)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -96,7 +98,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Pig Latin Translator", None))
         self.textEdit_source_english_input.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Enter text to be translated", None))
         self.textEdit_output.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Your translation will be displayed here", None))
         self.label_title.setText(QCoreApplication.translate("MainWindow", u"Pig Latin Translator", None))
