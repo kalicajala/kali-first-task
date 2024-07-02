@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Pig Latin Translator</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 170, 255)</string>
@@ -140,6 +140,9 @@ QPushButton::pressed {
     <property name="scaledContents">
      <bool>true</bool>
     </property>
+    <property name="textInteractionFlags">
+     <set>Qt::LinksAccessibleByMouse</set>
+    </property>
    </widget>
    <widget class="QLabel" name="happyPig">
     <property name="geometry">
@@ -158,6 +161,9 @@ QPushButton::pressed {
     </property>
     <property name="scaledContents">
      <bool>true</bool>
+    </property>
+    <property name="textInteractionFlags">
+     <set>Qt::LinksAccessibleByMouse</set>
     </property>
    </widget>
   </widget>
