@@ -3,6 +3,7 @@
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtCore import QFile
+from PySide6 import QtGui
 from gen.ui_main_window import Ui_MainWindow
 from source.sentence import Sentence
 
@@ -13,6 +14,7 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.connect_to_ui()
+        self._configure_logos()
 
     def connect_to_ui(self):
         # Output Textbox
@@ -37,3 +39,7 @@ class MainWindow(QMainWindow):
         sentence = Sentence(text_to_translate)
         translated_sentence = sentence.translate_sentence()
         self.ui.textEdit_output.setText(translated_sentence)
+
+    def _configure_logos(self):
+        self.ui.sadPig.setPixmap(QtGui.QPixmap(u"assets/peppaPigSad.jpg"))
+        self.ui.happyPig.setPixmap(QtGui.QPixmap(u"assets/peppaPigHappy.jpg"))
