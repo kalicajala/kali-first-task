@@ -1,0 +1,3 @@
+Here's an example of a script that tests all the functions of the translator. Copy and paste the following into the textbox to test:
+
+Testing out my Pig Latin Translator. I like the number 5. I want this to work!!! I have $40. Trying out combined-words. Let's see how this works, shall we?
