@@ -29,4 +29,5 @@ It accounts for the following:
 3. Run the following to install the rest of the required packages `$ pip install -r requirements.txt`
 
 ### Running the Application
-Run main.py
+1. If you made changes to the ui, run qmake.py
+2. Run main.py 
