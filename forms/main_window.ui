@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>594</height>
+    <width>669</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,91 +17,93 @@
    <string notr="true">background-color: rgb(255, 170, 255)</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTextEdit" name="textEdit_source_english_input">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>110</y>
-      <width>330</width>
-      <height>350</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QTextEdit {
-	background-color: rgb(255, 255, 255);
-	border: 2px solid rgb(0, 0, 0);
-	border-radius: 12px;
-	font: 14pt &quot;Sans Serif Collection&quot;;
-}</string>
-    </property>
-    <property name="placeholderText">
-     <string>Enter text to be translated</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="textEdit_output">
-    <property name="geometry">
-     <rect>
-      <x>450</x>
-      <y>110</y>
-      <width>330</width>
-      <height>350</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QTextEdit {
-	background-color: rgb(255, 255, 255);
-	border: 2px solid rgb(0, 0, 0);
-	border-radius: 12px;
-	font: 14pt &quot;Sans Serif Collection&quot;;
-}</string>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-    <property name="placeholderText">
-     <string>Your translation will be displayed here</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_title">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>40</y>
-      <width>240</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Sans Serif Collection</family>
-      <pointsize>18</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Pig Latin Translator</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_translate">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>480</y>
-      <width>141</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Sans Serif Collection</family>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="0" colspan="6">
+     <widget class="QWidget" name="widget_images_and_button" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>100</height>
+       </size>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0">
+       <property name="spacing">
+        <number>9</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QWidget" name="widget_sad_pig" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>150</width>
+           <height>150</height>
+          </size>
+         </property>
+         <widget class="QLabel" name="sadPig">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>150</width>
+            <height>150</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>150</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>150</width>
+            <height>120</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>../assets/peppaPigSad.jpg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+          <property name="textInteractionFlags">
+           <set>Qt::LinksAccessibleByMouse</set>
+          </property>
+         </widget>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_translate">
+         <property name="font">
+          <font>
+           <family>Sans Serif Collection</family>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
 	background-color: rgb(255, 0, 255);
 	border: 2px solid rgb(0, 0, 0);
 	border-radius: 12px;
@@ -114,58 +116,120 @@ QPushButton::hover {
 QPushButton::pressed {
 	background-color: rgb(230, 0, 255);
 }</string>
-    </property>
-    <property name="text">
-     <string>Translate</string>
-    </property>
-    <property name="checkable">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="sadPig">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>480</y>
-      <width>141</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../assets/peppaPigSad.jpg</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-    <property name="textInteractionFlags">
-     <set>Qt::LinksAccessibleByMouse</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="happyPig">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>470</y>
-      <width>100</width>
-      <height>100</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../assets/peppaPigHappy.jpg</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-    <property name="textInteractionFlags">
-     <set>Qt::LinksAccessibleByMouse</set>
-    </property>
-   </widget>
+         </property>
+         <property name="text">
+          <string>Translate</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_happy_pig" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>150</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>150</width>
+           <height>150</height>
+          </size>
+         </property>
+         <widget class="QLabel" name="happyPig">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>150</width>
+            <height>150</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>150</width>
+            <height>150</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>150</width>
+            <height>150</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap>../assets/peppaPigHappy.jpg</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+          <property name="textInteractionFlags">
+           <set>Qt::LinksAccessibleByMouse</set>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="6">
+     <widget class="QLabel" name="label_title">
+      <property name="font">
+       <font>
+        <family>Sans Serif Collection</family>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Pig Latin Translator</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="3">
+     <widget class="QTextEdit" name="textEdit_source_english_input">
+      <property name="styleSheet">
+       <string notr="true">QTextEdit {
+	background-color: rgb(255, 255, 255);
+	border: 2px solid rgb(0, 0, 0);
+	border-radius: 12px;
+	font: 14pt &quot;Sans Serif Collection&quot;;
+}</string>
+      </property>
+      <property name="placeholderText">
+       <string>Enter text to be translated</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3" colspan="3">
+     <widget class="QTextEdit" name="textEdit_output">
+      <property name="styleSheet">
+       <string notr="true">QTextEdit {
+	background-color: rgb(255, 255, 255);
+	border: 2px solid rgb(0, 0, 0);
+	border-radius: 12px;
+	font: 14pt &quot;Sans Serif Collection&quot;;
+}</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="placeholderText">
+       <string>Your translation will be displayed here</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
