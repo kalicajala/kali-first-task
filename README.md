@@ -11,28 +11,22 @@ It accounts for the following:
 - Special Characters
 - Numbers
 
-## **Installation**
-### Requirements:
-* Visual Studio Code
-* Python 3.12
-* Git
-* PySide6
+## Requirements
+- Visual Studio Code
+- Python 3.12
+- Git
 
-### Instructions: 
+## Instructions
+### Git Clone
+1. Open your command line prompt or terminal
+2. Switch to your desired folder you want to run the application in
+3. Type and enter the following prompt: `git clone https://github.com/kalicajala/pig-latin-translator.git`
+4. Switch into the repository by entering: `cd pig-latin-translator`
 
-#### Git Clone
-1. In VSCode, press CMD + SHIFT + P to input commands
-2. Search and select "Git: Clone" and click "Clone from GitHub"
-3. Authorize account if prompted
-4. When prompted for repository name, search for "pig-latin-translator"
-5. Create new folder in desired location, and direct the repository to it
-6. Allow git to clone repo - *this step may take some time*
+### Virtual Environment Setup
+1. Open VSCode and ensure it is configured with Python 3.12
+2. To create the virtual environment, run the following in the terminal: `$ python -m venv .venv`
+3. Run the following to install the rest of the required packages `$ pip install -r requirements.txt`
 
-#### Virtualenv Setup
-1. Ensure your VSCode is configured for Python 3.12
-2. In VSCode's terminal, run `$ python -m venv .venv` to create a virtual environment
-3. Bring this file to your cloned directory, and run `$ pip install {File Name}`
-4. To install the rest of the packages, run `$ pip install -r requirements.txt` - *this step may also take time*
-#### Running the Code
-1. If you made changes to the ui, run qmake.py
-2. Run main.py 
+### Running the Application
+Run main.py
