@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(669, 600)
+        MainWindow.resize(719, 662)
         MainWindow.setStyleSheet(u"background-color: rgb(255, 170, 255)")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -91,7 +91,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.widget_happy_pig)
 
 
-        self.gridLayout.addWidget(self.widget_images_and_button, 2, 0, 1, 6)
+        self.gridLayout.addWidget(self.widget_images_and_button, 4, 0, 1, 6)
 
         self.label_title = QLabel(self.centralwidget)
         self.label_title.setObjectName(u"label_title")
@@ -113,7 +113,7 @@ class Ui_MainWindow(object):
 "	font: 14pt \"Sans Serif Collection\";\n"
 "}")
 
-        self.gridLayout.addWidget(self.textEdit_source_english_input, 1, 0, 1, 3)
+        self.gridLayout.addWidget(self.textEdit_source_english_input, 1, 1, 1, 1)
 
         self.textEdit_output = QTextEdit(self.centralwidget)
         self.textEdit_output.setObjectName(u"textEdit_output")
@@ -125,7 +125,7 @@ class Ui_MainWindow(object):
 "}")
         self.textEdit_output.setReadOnly(True)
 
-        self.gridLayout.addWidget(self.textEdit_output, 1, 3, 1, 3)
+        self.gridLayout.addWidget(self.textEdit_output, 1, 2, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
