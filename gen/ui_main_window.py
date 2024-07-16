@@ -23,12 +23,23 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(719, 662)
+        MainWindow.resize(852, 670)
         MainWindow.setStyleSheet(u"background-color: rgb(255, 170, 255)")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName(u"gridLayout")
+        self.label_title = QLabel(self.centralwidget)
+        self.label_title.setObjectName(u"label_title")
+        font = QFont()
+        font.setFamilies([u"Sans Serif Collection"])
+        font.setPointSize(18)
+        font.setBold(True)
+        self.label_title.setFont(font)
+        self.label_title.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.label_title, 0, 0, 1, 5)
+
         self.widget_images_and_button = QWidget(self.centralwidget)
         self.widget_images_and_button.setObjectName(u"widget_images_and_button")
         self.widget_images_and_button.setMinimumSize(QSize(0, 100))
@@ -53,11 +64,11 @@ class Ui_MainWindow(object):
 
         self.pushButton_translate = QPushButton(self.widget_images_and_button)
         self.pushButton_translate.setObjectName(u"pushButton_translate")
-        font = QFont()
-        font.setFamilies([u"Sans Serif Collection"])
-        font.setPointSize(12)
-        font.setBold(True)
-        self.pushButton_translate.setFont(font)
+        font1 = QFont()
+        font1.setFamilies([u"Sans Serif Collection"])
+        font1.setPointSize(12)
+        font1.setBold(True)
+        self.pushButton_translate.setFont(font1)
         self.pushButton_translate.setStyleSheet(u"QPushButton {\n"
 "	background-color: rgb(255, 0, 255);\n"
 "	border: 2px solid rgb(0, 0, 0);\n"
@@ -91,18 +102,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.widget_happy_pig)
 
 
-        self.gridLayout.addWidget(self.widget_images_and_button, 4, 0, 1, 6)
-
-        self.label_title = QLabel(self.centralwidget)
-        self.label_title.setObjectName(u"label_title")
-        font1 = QFont()
-        font1.setFamilies([u"Sans Serif Collection"])
-        font1.setPointSize(18)
-        font1.setBold(True)
-        self.label_title.setFont(font1)
-        self.label_title.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout.addWidget(self.label_title, 0, 0, 1, 6)
+        self.gridLayout.addWidget(self.widget_images_and_button, 4, 0, 1, 5)
 
         self.textEdit_source_english_input = QTextEdit(self.centralwidget)
         self.textEdit_source_english_input.setObjectName(u"textEdit_source_english_input")
@@ -125,7 +125,7 @@ class Ui_MainWindow(object):
 "}")
         self.textEdit_output.setReadOnly(True)
 
-        self.gridLayout.addWidget(self.textEdit_output, 1, 2, 1, 1)
+        self.gridLayout.addWidget(self.textEdit_output, 1, 3, 1, 1)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
@@ -139,10 +139,10 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Pig Latin Translator", None))
+        self.label_title.setText(QCoreApplication.translate("MainWindow", u"Pig Latin Translator", None))
         self.sadPig.setText("")
         self.pushButton_translate.setText(QCoreApplication.translate("MainWindow", u"Translate", None))
         self.happyPig.setText("")
-        self.label_title.setText(QCoreApplication.translate("MainWindow", u"Pig Latin Translator", None))
         self.textEdit_source_english_input.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Enter text to be translated", None))
         self.textEdit_output.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Your translation will be displayed here", None))
     # retranslateUi
