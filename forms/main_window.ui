@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>719</width>
-    <height>662</height>
+    <width>852</width>
+    <height>670</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,25 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="4" column="0" colspan="6">
+    <item row="0" column="0" colspan="5">
+     <widget class="QLabel" name="label_title">
+      <property name="font">
+       <font>
+        <family>Sans Serif Collection</family>
+        <pointsize>18</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Pig Latin Translator</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0" colspan="5">
      <widget class="QWidget" name="widget_images_and_button" native="true">
       <property name="minimumSize">
        <size>
@@ -178,24 +196,6 @@ QPushButton::pressed {
       </layout>
      </widget>
     </item>
-    <item row="0" column="0" colspan="6">
-     <widget class="QLabel" name="label_title">
-      <property name="font">
-       <font>
-        <family>Sans Serif Collection</family>
-        <pointsize>18</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Pig Latin Translator</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="1">
      <widget class="QTextEdit" name="textEdit_source_english_input">
       <property name="styleSheet">
@@ -211,7 +211,7 @@ QPushButton::pressed {
       </property>
      </widget>
     </item>
-    <item row="1" column="2">
+    <item row="1" column="3">
      <widget class="QTextEdit" name="textEdit_output">
       <property name="styleSheet">
        <string notr="true">QTextEdit {
