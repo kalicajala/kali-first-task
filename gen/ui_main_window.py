@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(852, 670)
+        MainWindow.resize(818, 697)
         MainWindow.setStyleSheet(u"background-color: rgb(255, 170, 255)")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
@@ -104,6 +104,8 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.widget_images_and_button, 4, 0, 1, 5)
 
+        self.gridLayout_textboxes = QGridLayout()
+        self.gridLayout_textboxes.setObjectName(u"gridLayout_textboxes")
         self.textEdit_source_english_input = QTextEdit(self.centralwidget)
         self.textEdit_source_english_input.setObjectName(u"textEdit_source_english_input")
         self.textEdit_source_english_input.setStyleSheet(u"QTextEdit {\n"
@@ -113,7 +115,7 @@ class Ui_MainWindow(object):
 "	font: 14pt \"Sans Serif Collection\";\n"
 "}")
 
-        self.gridLayout.addWidget(self.textEdit_source_english_input, 1, 1, 1, 1)
+        self.gridLayout_textboxes.addWidget(self.textEdit_source_english_input, 0, 0, 1, 1)
 
         self.textEdit_output = QTextEdit(self.centralwidget)
         self.textEdit_output.setObjectName(u"textEdit_output")
@@ -125,7 +127,10 @@ class Ui_MainWindow(object):
 "}")
         self.textEdit_output.setReadOnly(True)
 
-        self.gridLayout.addWidget(self.textEdit_output, 1, 3, 1, 1)
+        self.gridLayout_textboxes.addWidget(self.textEdit_output, 0, 1, 1, 1)
+
+
+        self.gridLayout.addLayout(self.gridLayout_textboxes, 1, 0, 1, 5)
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
